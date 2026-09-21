@@ -1,427 +1,777 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiruchelvam N | Portfolio</title>
-    <meta name="description" content="Portfolio of Thiruchelvam N, a Computer Science Engineering Student specializing in Backend Development and AI/ML.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Thiruchelvam N — Backend &amp; AI Engineer</title>
+<!-- Tailwind CSS CDN with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration for Warm Editorial Paper -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Newsreader"', '"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            ink: '#1C1917',
+            charcoal: '#292524',
+            muted: '#78716C',
+            subtle: '#A8A29E',
+            borderline: '#E7E0D6',
+            paper: '#FFFFFF',
+            cream: '#FAF7F2',
+            rust: '#9A3412',
+            'rust-light': '#FFF7ED'
+          }
+        }
+      }
+    };
+  </script>
+<!-- Google Fonts for Editorial Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Core Component & Utility Styles -->
+<style data-purpose="typography">
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    .editorial-underline {
+      text-decoration-line: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1.5px;
+      text-decoration-color: #9A3412;
+      transition: all 0.2s ease-in-out;
+    }
+    .editorial-underline:hover {
+      text-decoration-color: #1C1917;
+      color: #9A3412;
+    }
+  </style>
+<style data-purpose="buttons-and-interactions">
+    .btn-minimal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #1C1917;
+      background: #FFFFFF;
+      color: #1C1917;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.5rem;
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-minimal:hover {
+      background: #1C1917;
+      color: #FFFFFF;
+      border-color: #1C1917;
+    }
+    .btn-minimal-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #E7E0D6;
+      background: #FAF7F2;
+      color: #1C1917;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.25rem;
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-minimal-ghost:hover {
+      border-color: #9A3412;
+      color: #9A3412;
+      background: #FFFFFF;
+    }
+  </style>
 </head>
-<body>
-    <header class="navbar">
-        <div class="nav-content">
-            <a href="#" class="logo">TN.</a>
-            <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#contact" class="btn-primary">Contact</a>
-            </nav>
-        </div>
-    </header>
+<body class="bg-cream text-ink font-sans antialiased selection:bg-rust selection:text-white">
+<!-- BEGIN: NavigationHeader -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-borderline">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
+<!-- Brand & Title -->
+<a class="group flex items-center gap-2 text-sm tracking-tight text-ink font-medium" href="#about">
+<span class="font-bold tracking-normal text-ink group-hover:text-rust transition-colors">Thiruchelvam N</span>
+<span class="text-subtle/50 font-light">/</span>
+<span class="text-muted text-xs sm:text-sm font-normal">Backend &amp; AI Engineer</span>
+</a>
+<!-- Desktop Links & Availability Status -->
+<nav class="hidden md:flex items-center gap-8 text-sm">
+<a class="text-muted hover:text-rust transition-colors" href="#about">About</a>
+<a class="text-muted hover:text-rust transition-colors" href="#skills">Capabilities</a>
+<a class="text-muted hover:text-rust transition-colors" href="#projects">Projects</a>
+<a class="text-muted hover:text-rust transition-colors" href="#honors">Honors</a>
+<a class="text-muted hover:text-rust transition-colors" href="#contact">Contact</a>
+</nav>
+<!-- Status Indicator & Quick Contact -->
+<div class="flex items-center gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 border border-borderline rounded-full bg-paper text-xs text-muted font-mono shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-rust animate-pulse"></span>
+<span class="text-stone-700">Available for hire</span>
+</div>
+<a class="hidden sm:inline-flex text-xs uppercase tracking-widest font-semibold text-rust hover:text-ink hover:underline underline-offset-4 transition-colors" href="#contact">
+          Say Hello →
+        </a>
+</div>
+</div>
+</header>
+<!-- END: NavigationHeader -->
+<main>
+<!-- BEGIN: HeroAboutSection -->
+<section class="pt-16 pb-20 md:pt-24 md:pb-28 border-b border-borderline" id="about">
+<div class="max-w-6xl mx-auto px-6 sm:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Column: Editorial About Content -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<!-- Section Title matching reference aesthetic -->
+<h1 class="font-serif text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.15] font-semibold text-ink mb-6 tracking-tight">
+              About Me
+            </h1>
+<!-- Signature Lead Paragraph with Italic Emphasis -->
+<p class="font-serif text-xl sm:text-2xl lg:text-[1.55rem] leading-relaxed text-charcoal font-normal mb-7">
+              Hi! I’m <span class="font-semibold text-ink">Thiruchelvam N</span>. I’m a <em>backend engineer</em>, 
+              <em>machine learning practitioner</em>, and <em>systems enthusiast</em> currently based in Chennai, India. 
+              I design resilient distributed architectures and scalable computer vision pipelines that solve tangible engineering challenges.
+            </p>
+<!-- Technical Focus Paragraph -->
+<p class="text-muted text-base sm:text-lg leading-relaxed mb-6 font-sans">
+              Currently engineering high-throughput microservices using <span class="text-ink font-medium">Java &amp; Spring Boot</span>, and training edge-ready deep learning models with <span class="text-ink font-medium">Python &amp; PyTorch</span>. Final year Computer Science scholar at <span class="text-ink font-medium">Rajalakshmi Institute of Technology</span> (<span class="font-mono text-xs bg-paper px-2 py-0.5 rounded text-rust border border-borderline font-semibold">8.61 CGPA</span>).
+            </p>
+<!-- Underlined Activities Link Paragraph (from reference style) -->
+<p class="text-charcoal text-base sm:text-lg leading-relaxed mb-10">
+              I also <a class="editorial-underline font-medium text-ink hover:text-rust" href="https://github.com/Thiru1902" rel="noopener noreferrer" target="_blank">write open-source code</a>, compete in <a class="editorial-underline font-medium text-ink hover:text-rust" href="#honors">national hackathons</a>, and benchmark algorithms on <a class="editorial-underline font-medium text-ink hover:text-rust" href="https://leetcode.com" rel="noopener noreferrer" target="_blank">LeetCode</a>.
+            </p>
+<!-- Primary Action Buttons -->
+<div class="flex flex-wrap items-center gap-4">
+<a class="btn-minimal shadow-sm" data-purpose="primary-contact-button" href="#contact">
+                Get in Touch
+              </a>
+<a class="btn-minimal-ghost" data-purpose="secondary-projects-button" href="#projects">
+                Explore Projects ↓
+              </a>
+</div>
+<!-- Quick Links Row -->
+<div class="mt-10 pt-6 border-t border-borderline flex items-center gap-6 text-xs uppercase tracking-widest text-muted font-semibold">
+<span class="text-subtle">Connect:</span>
+<a class="hover:text-rust transition-colors" href="https://github.com/Thiru1902" rel="noopener noreferrer" target="_blank">GitHub</a>
+<span class="text-subtle/50">•</span>
+<a class="hover:text-rust transition-colors" href="https://www.linkedin.com/in/thiru-chelvam1902" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<span class="text-subtle/50">•</span>
+<a class="hover:text-rust transition-colors" href="mailto:thiruchelvam1902@gmail.com">Email</a>
+</div>
+</div>
+<!-- Right Column: Line Art Portrait (from IMAGE_5) -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="relative w-full flex justify-center lg:justify-end items-center">
+<img alt="Thiruchelvam N Line Art Portrait" class="w-full max-w-lg lg:max-w-xl h-auto object-contain select-none pointer-events-none filter contrast-105" loading="eager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqU5gsYt8dicPv4J4mWs8xPWhJVBo_HogpjceT4PNYeunB9XudyNmh0nYgwFGRHZmpOjVCI8z0TY9Abt5QQ7kHlxU5T7qqTCii2_L7HFusTXhS5y6GQbu6mQxEijrhPSp_W5ABlzTogkPvT6na3W3ICto0Or0D-cTSbjp1sfW7R18c0_f3zqvSpGGaDG2HfSacMbp8nVVSAQ9I0AtwetfQTvpL1IEqEhZP-lm9l6DyxCAHHoNzmrb9hnpm5kRBPRT3">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroAboutSection -->
+<!-- BEGIN: CoreCapabilitiesSection -->
+<section class="py-20 bg-paper border-b border-borderline" id="skills">
+<div class="max-w-6xl mx-auto px-6 sm:px-8">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 pb-4 border-b border-borderline gap-4">
+<div>
+<span class="text-xs uppercase tracking-widest font-mono text-rust font-semibold">Core Foundation</span>
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mt-1">Technical Stack &amp; Architecture</h2>
+</div>
+<p class="text-muted text-sm max-w-sm leading-relaxed">
+            Disciplined software engineering with equal fluency in systems-level programming and applied statistical learning.
+          </p>
+</div>
+<!-- Editorial Stack Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Stack Item 1: Programming Languages -->
+<div class="p-6 bg-cream border border-borderline rounded-none flex flex-col justify-between hover:border-rust transition-all group">
+<div>
+<div class="text-xs font-mono uppercase text-rust mb-3 font-semibold">01 / Core Languages</div>
+<h3 class="text-xl font-serif font-semibold text-ink mb-2 group-hover:text-rust transition-colors">Programming Languages</h3>
+<p class="text-sm text-muted leading-relaxed mb-6">
+                Strong foundation in object-oriented and systems programming, specializing in high-performance implementations and logical problem solving.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-4 border-t border-borderline">
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">Java (NPTEL Certified)</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">Python</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">C</span>
+</div>
+</div>
+<!-- Stack Item 2: Web Development -->
+<div class="p-6 bg-cream border border-borderline rounded-none flex flex-col justify-between hover:border-rust transition-all group">
+<div>
+<div class="text-xs font-mono uppercase text-rust mb-3 font-semibold">02 / Frontend</div>
+<h3 class="text-xl font-serif font-semibold text-ink mb-2 group-hover:text-rust transition-colors">Web Development</h3>
+<p class="text-sm text-muted leading-relaxed mb-6">
+                Building accessible, responsive user interfaces and structuring web applications with standard frontend technologies.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-4 border-t border-borderline">
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">HTML</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">CSS</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">JavaScript (Frontend Basics)</span>
+</div>
+</div>
+<!-- Stack Item 3: Frameworks & Tools -->
+<div class="p-6 bg-cream border border-borderline rounded-none flex flex-col justify-between hover:border-rust transition-all group">
+<div>
+<div class="text-xs font-mono uppercase text-rust mb-3 font-semibold">03 / Architecture &amp; Versioning</div>
+<h3 class="text-xl font-serif font-semibold text-ink mb-2 group-hover:text-rust transition-colors">Frameworks &amp; Tools</h3>
+<p class="text-sm text-muted leading-relaxed mb-6">
+                Developing scalable backend APIs, managing collaborative code repositories, and building interactive data visualization dashboards.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-4 border-t border-borderline">
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">Spring Boot (Learning)</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">Power BI</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">Git &amp; GitHub</span>
+</div>
+</div>
+<!-- Stack Item 4: AI / ML -->
+<div class="p-6 bg-cream border border-borderline rounded-none flex flex-col justify-between hover:border-rust transition-all group">
+<div>
+<div class="text-xs font-mono uppercase text-rust mb-3 font-semibold">04 / Intelligence</div>
+<h3 class="text-xl font-serif font-semibold text-ink mb-2 group-hover:text-rust transition-colors">AI &amp; Machine Learning</h3>
+<p class="text-sm text-muted leading-relaxed mb-6">
+                Integrating predictive analytics and machine learning capabilities into software pipelines via model fine-tuning and API utilization.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-4 border-t border-borderline">
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">Model Fine-Tuning</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">API in Application</span>
+</div>
+</div>
+<!-- Stack Item 5: Database -->
+<div class="p-6 bg-cream border border-borderline rounded-none flex flex-col justify-between hover:border-rust transition-all group">
+<div>
+<div class="text-xs font-mono uppercase text-rust mb-3 font-semibold">05 / Storage &amp; Sync</div>
+<h3 class="text-xl font-serif font-semibold text-ink mb-2 group-hover:text-rust transition-colors">Databases</h3>
+<p class="text-sm text-muted leading-relaxed mb-6">
+                Designing normalized relational schemas and managing real-time document-based data synchronization for modern applications.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-4 border-t border-borderline">
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">Firebase</span>
+<span class="text-xs font-mono px-2 py-0.5 bg-paper text-charcoal border border-borderline/60">SQL</span>
+</div>
+</div>
+<!-- Empty Stack Item 6 for Grid Balance -->
+<div class="p-6 bg-transparent border-none rounded-none hidden lg:flex flex-col justify-between transition-all group">
+</div>
+</div>
+</div>
+</section>
+<!-- END: CoreCapabilitiesSection -->
+<!-- BEGIN: FeaturedProjectsSection -->
+<section class="py-20 md:py-28 border-b border-borderline bg-cream" id="projects">
+<div class="max-w-6xl mx-auto px-6 sm:px-8">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-16 pb-4 border-b border-borderline gap-4">
+<div>
+<span class="text-xs uppercase tracking-widest font-mono text-rust font-semibold">Selected Work</span>
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mt-1">Production Architectures &amp; Models</h2>
+</div>
+<span class="text-xs font-mono text-subtle">2023 — PRESENT</span>
+</div>
+<!-- Projects Grid in Clean Editorial Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <p class="greeting">Hello, I'm</p>
-                <h1 class="name">Thiruchelvam N</h1>
-                <h2 class="title">Computer Science Engineering Student | Backend Developer | AI/ML Enthusiast</h2>
-                <p class="bio">
-                    Computer Science Engineering student at Rajalakshmi Institute of Technology, interested in backend development, artificial intelligence, machine learning, and building practical software solutions.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">View My Work</a>
-                    <div class="social-links">
-                        <a href="https://github.com/Thiru1902" target="_blank" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/thiru-chelvam1902" target="_blank" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a>
-                        <a href="mailto:thiruchelvam1902@gmail.com" aria-label="Email">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-graphics">
-                <div class="blob"></div>
-                <div class="glass-card">
-                    <h3>Education</h3>
-                    <p><strong>Bachelor of Engineering — CSE</strong></p>
-                    <p>Rajalakshmi Institute of Technology</p>
-                    <p class="text-muted">2024 – 2028 | CGPA: 8.61</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I enjoy working on projects that combine software development with real-world problems, from investment and placement analytics to computer vision and predictive maintenance.</p>
-                    <p>I like building projects that go beyond simple demonstrations and attempt to solve real-world problems. My work has included an AI-powered investment application, a placement readiness platform, computer-vision-based safety monitoring, agricultural disease detection, and a predictive maintenance project involving quantum machine learning.</p>
-                    <p>Through hackathons, technical competitions, and college events, I have gained experience in team-based development, rapid prototyping, presenting technical solutions, and working under time constraints.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span>Java (NPTEL Certified)</span>
-                        <span>C</span>
-                        <span>Python</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Web Development</h3>
-                    <div class="skill-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript (Frontend Basics)</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Tools</h3>
-                    <div class="skill-tags">
-                        <span>Spring Boot (Learning)</span>
-                        <span>Power BI</span>
-                        <span>Git & GitHub</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>AI / ML</h3>
-                    <div class="skill-tags">
-                        <span>Model Fine-Tuning</span>
-                        <span>API Key Usage</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Database</h3>
-                    <div class="skill-tags">
-                        <span>Firebase</span>
-                        <span>SQL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card" data-modal="modal-fufu">
-                    <div class="project-img-wrapper">
-                        <img src="assets/Future-Fund_FuFu.jpeg" alt="Future-Fund-FuFu" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>Future-Fund-FuFu</h3>
-                        <p>Smart Investment & Portfolio Management Application</p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card" data-modal="modal-sugarcane">
-                    <div class="project-img-wrapper">
-                        <img src="assets/Sugarcane-disease-detection.jpeg" alt="Sugarcane Disease Detection" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sugarcane Disease Detection</h3>
-                        <p>AI-Based Agricultural Disease Detection</p>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card" data-modal="modal-pris">
-                    <div class="project-img-wrapper">
-                        <img src="assets/PRIS.jpeg" alt="PRIS" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>PRIS</h3>
-                        <p>Placement Readiness Intelligence System</p>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" data-modal="modal-construction">
-                    <div class="project-img-wrapper">
-                        <img src="assets/Construction-Compilance.jpeg" alt="Construction Safety Compliance" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>Construction Safety Compliance</h3>
-                        <p>AI-Based Construction Safety Monitoring</p>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" data-modal="modal-qmaintain">
-                    <div class="project-img-wrapper">
-                        <img src="assets/Q-maintain.jpeg" alt="Q-Maintain" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>Q-Maintain</h3>
-                        <p>Quantum-Enhanced Predictive Maintenance System</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Achievements & Experience Section -->
-        <section id="achievements" class="section">
-            <h2 class="section-title">Achievements & Leadership</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>SRM College Hackathon</h3>
-                    <span class="timeline-date">2nd Prize Winner</span>
-                    <p>Participated in a hackathon at SRM College and secured 2nd prize for the developed solution.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>Quantathon — Rajalakshmi Institute of Technology</h3>
-                    <span class="timeline-date">Domain Winner</span>
-                    <p>Won the Domain Winner recognition at the Quantathon.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>PALS Workshop Competition</h3>
-                    <span class="timeline-date">Competition Winner</span>
-                    <p>Won a competition conducted as part of the PALS Workshop.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>Web3 Boot Camp</h3>
-                    <span class="timeline-date">Girls Script Foundation</span>
-                    <p>Contributed to event coordination and execution while working with the organizing team.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>Startup Pitch</h3>
-                    <span class="timeline-date">College Symposium</span>
-                    <p>Was part of the team involved in conducting a Startup Pitch event, contributing to organizing and coordination.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>NPTEL Certification</h3>
-                    <span class="timeline-date">Programming in Java (78%)</span>
-                    <p>Demonstrated knowledge of Java programming concepts through the NPTEL certification examination.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact" class="footer">
-        <div class="footer-content">
-            <h2>Let's Connect</h2>
-            <p>Interested in collaborating on software development, AI/ML projects, hackathons, or technical initiatives?</p>
-            <div class="footer-links">
-                <a href="mailto:thiruchelvam1902@gmail.com" class="btn-primary">Email Me</a>
-                <a href="https://github.com/Thiru1902" target="_blank" class="btn-outline">GitHub</a>
-                <a href="https://www.linkedin.com/in/thiru-chelvam1902" target="_blank" class="btn-outline">LinkedIn</a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; <span id="year"></span> Thiruchelvam N. Built with passion.
-        </div>
-    </footer>
-
-    <!-- Modals -->
-    <div class="modal-overlay" id="modal-overlay"></div>
-
-    <!-- Modal 1 -->
-    <div class="modal" id="modal-fufu">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <div class="modal-img">
-            <img src="assets/Future-Fund_FuFu.jpeg" alt="Future-Fund-FuFu">
-        </div>
-        <div class="modal-body">
-            <h2>Future-Fund-FuFu</h2>
-            <p class="modal-subtitle">Smart Investment & Portfolio Management Application</p>
-            <p>FuFu is a smart Android investing application designed around portfolio management and investment analysis. The application integrates with Angel One for SIP and lump-sum trading and allows users to create and backtest custom stock portfolios.</p>
-            <p>A key feature is its AI-assisted portfolio monitoring, where an on-device Gemini AI analyzes portfolio situations and provides news-backed insights during market drops to help users make more informed decisions.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li>Angel One integration (SIP & lump-sum)</li>
-                <li>Custom stock portfolio creation & backtesting</li>
-                <li>AI-powered portfolio monitoring & guidance</li>
-                <li>News-backed market insights</li>
-            </ul>
-
-            <h3>Technologies Used</h3>
-            <div class="skill-tags">
-                <span>Android</span>
-                <span>Gemini AI</span>
-                <span>Angel One API</span>
-                <span>Portfolio Analytics</span>
-            </div>
-
-            <a href="https://github.com/Thiru1902/Future-Fund-FuFu" target="_blank" class="btn-primary modal-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                View on GitHub
-            </a>
-        </div>
+  <!-- Project 01 Card -->
+  <article onclick="openModal('project-1')" class="border border-borderline hover:border-rust bg-paper transition-all group shadow-sm cursor-pointer flex flex-col h-full overflow-hidden relative">
+    <div class="h-48 overflow-hidden border-b border-borderline relative bg-borderline/20">
+      <img src="assets/Future-Fund_FuFu.jpeg" alt="Project image" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" />
     </div>
-
-    <!-- Modal 2 -->
-    <div class="modal" id="modal-sugarcane">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <div class="modal-img">
-            <img src="assets/Sugarcane-disease-detection.jpeg" alt="Sugarcane Disease Detection">
+    <div class="p-6 flex flex-col flex-grow justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-xs font-mono text-rust font-semibold">PROJECT // 01</span>
         </div>
-        <div class="modal-body">
-            <h2>Sugarcane Disease Detection</h2>
-            <p class="modal-subtitle">AI-Based Agricultural Disease Detection</p>
-            <p>A web-based application that identifies potential sugarcane diseases from uploaded sugarcane leaf images. The application uses a Groq vision model for image analysis and provides a simple Streamlit interface through which users can upload a leaf image for detection.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li>Sugarcane leaf image upload</li>
-                <li>AI-based image analysis</li>
-                <li>Disease identification</li>
-                <li>Simple web interface</li>
-            </ul>
-
-            <h3>Technologies Used</h3>
-            <div class="skill-tags">
-                <span>Python</span>
-                <span>Groq</span>
-                <span>Computer Vision</span>
-                <span>Streamlit</span>
-            </div>
-
-            <a href="https://github.com/Thiru1902/sugarcane-disease-detection" target="_blank" class="btn-primary modal-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                View on GitHub
-            </a>
-        </div>
+        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-ink group-hover:text-rust transition-colors">
+          Future-Fund-FuFu: Predictive Investment &amp; Market Volatility Engine
+        </h3>
+      </div>
+      <div class="mt-8 pt-4 border-t border-borderline flex items-center justify-between">
+        <span class="text-xs uppercase tracking-widest text-muted group-hover:text-rust transition-colors font-semibold">View Details</span>
+        <span class="text-rust transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </div>
     </div>
+  </article>
 
-    <!-- Modal 3 -->
-    <div class="modal" id="modal-pris">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <div class="modal-img">
-            <img src="assets/PRIS.jpeg" alt="PRIS">
-        </div>
-        <div class="modal-body">
-            <h2>PRIS — Placement Readiness Intelligence System</h2>
-            <p class="modal-subtitle">Student Placement Analytics Platform</p>
-            <p>PRIS is a placement-readiness platform designed to help students understand their preparation level while providing placement officers with centralized student analytics. The system provides separate interfaces for Students and Placement Officers and integrates academic, coding, certification, and skill-development information.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li>Role-based access (Student & Placement officer dashboards)</li>
-                <li>GitHub and LeetCode synchronization</li>
-                <li>Skillrack activity tracking & Certification management</li>
-                <li>Student recommendations & Company eligibility filtering</li>
-                <li>High-CGPA / low-coding-performance identification</li>
-            </ul>
-
-            <h3>Technologies Used</h3>
-            <div class="skill-tags">
-                <span>React 18</span>
-                <span>Spring Boot</span>
-                <span>MySQL</span>
-                <span>Tailwind CSS</span>
-                <span>Recharts</span>
-                <span>Axios</span>
-                <span>Vite</span>
-            </div>
-
-            <a href="https://github.com/yogeshrajanv/Placement_Intelligence_System" target="_blank" class="btn-primary modal-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                View on GitHub
-            </a>
-        </div>
+  <!-- Project 02 Card -->
+  <article onclick="openModal('project-2')" class="border border-borderline hover:border-rust bg-paper transition-all group shadow-sm cursor-pointer flex flex-col h-full overflow-hidden relative">
+    <div class="h-48 overflow-hidden border-b border-borderline relative bg-borderline/20">
+      <img src="assets/Sugarcane-disease-detection.jpeg" alt="Project image" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" />
     </div>
-
-    <!-- Modal 4 -->
-    <div class="modal" id="modal-construction">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <div class="modal-img">
-            <img src="assets/Construction-Compilance.jpeg" alt="Construction Safety Compliance">
+    <div class="p-6 flex flex-col flex-grow justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-xs font-mono text-rust font-semibold">PROJECT // 02</span>
         </div>
-        <div class="modal-body">
-            <h2>Construction Safety Compliance</h2>
-            <p class="modal-subtitle">AI-Based Construction Safety Monitoring</p>
-            <p>A computer-vision prototype designed to identify construction workers and detect missing Personal Protective Equipment (PPE). The system uses YOLOv8 to detect workers and PPE-related conditions and flags potential safety violations based on the project's BOCW Act 1996 compliance logic.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li>Construction worker detection</li>
-                <li>PPE (Personal Protective Equipment) detection</li>
-                <li>Safety violation identification</li>
-                <li>BOCW-oriented compliance logic</li>
-                <li>Interactive Streamlit interface</li>
-            </ul>
-
-            <h3>Technologies Used</h3>
-            <div class="skill-tags">
-                <span>Python</span>
-                <span>YOLOv8</span>
-                <span>Computer Vision</span>
-                <span>Streamlit</span>
-            </div>
-
-            <a href="https://github.com/Thiru1902/construction-safety-compliance" target="_blank" class="btn-primary modal-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                View on GitHub
-            </a>
-        </div>
+        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-ink group-hover:text-rust transition-colors">
+          Deep Learning Sugarcane Pathology &amp; Early Disease Detection
+        </h3>
+      </div>
+      <div class="mt-8 pt-4 border-t border-borderline flex items-center justify-between">
+        <span class="text-xs uppercase tracking-widest text-muted group-hover:text-rust transition-colors font-semibold">View Details</span>
+        <span class="text-rust transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </div>
     </div>
+  </article>
 
-    <!-- Modal 5 -->
-    <div class="modal" id="modal-qmaintain">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <div class="modal-img">
-            <img src="assets/Q-maintain.jpeg" alt="Q-Maintain">
-        </div>
-        <div class="modal-body">
-            <h2>Q-Maintain</h2>
-            <p class="modal-subtitle">Quantum-Enhanced Predictive Maintenance System</p>
-            <p>A predictive maintenance project developed for the Quantathon, combining classical machine learning and quantum machine learning approaches. The project explores predictive maintenance using XGBoost, QSVM with Qiskit, and a quantum-enhanced XGBoost approach, with comparisons between classical and quantum-based methods. The system also includes live smartphone sensor analysis using Phyphox.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li>Predictive maintenance & RUL estimation</li>
-                <li>XGBoost classification & QSVM using Qiskit</li>
-                <li>Quantum-enhanced XGBoost experimentation</li>
-                <li>Live Phyphox sensor analysis</li>
-                <li>Streamlit dashboard</li>
-            </ul>
-
-            <h3>Technologies Used</h3>
-            <div class="skill-tags">
-                <span>Python</span>
-                <span>XGBoost</span>
-                <span>Qiskit</span>
-                <span>QSVM</span>
-                <span>Quantum Machine Learning</span>
-                <span>Phyphox</span>
-                <span>Streamlit</span>
-            </div>
-
-            <a href="https://github.com/Udhay345/Q-Maintain" target="_blank" class="btn-primary modal-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                View on GitHub
-            </a>
-        </div>
+  <!-- Project 03 Card -->
+  <article onclick="openModal('project-3')" class="border border-borderline hover:border-rust bg-paper transition-all group shadow-sm cursor-pointer flex flex-col h-full overflow-hidden relative">
+    <div class="h-48 overflow-hidden border-b border-borderline relative bg-borderline/20">
+      <img src="assets/PRIS.jpeg" alt="Project image" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" />
     </div>
+    <div class="p-6 flex flex-col flex-grow justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-xs font-mono text-rust font-semibold">PROJECT // 03</span>
+        </div>
+        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-ink group-hover:text-rust transition-colors">
+          PRIS: Predictive Real-time Incident &amp; Fault Telemetry System
+        </h3>
+      </div>
+      <div class="mt-8 pt-4 border-t border-borderline flex items-center justify-between">
+        <span class="text-xs uppercase tracking-widest text-muted group-hover:text-rust transition-colors font-semibold">View Details</span>
+        <span class="text-rust transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </div>
+    </div>
+  </article>
 
-    <script src="script.js"></script>
-</body>
-</html>
+  <!-- Project 04 Card -->
+  <article onclick="openModal('project-4')" class="border border-borderline hover:border-rust bg-paper transition-all group shadow-sm cursor-pointer flex flex-col h-full overflow-hidden relative">
+    <div class="h-48 overflow-hidden border-b border-borderline relative bg-borderline/20">
+      <img src="assets/Construction-Compilance.jpeg" alt="Project image" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" />
+    </div>
+    <div class="p-6 flex flex-col flex-grow justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-xs font-mono text-rust font-semibold">PROJECT // 04</span>
+        </div>
+        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-ink group-hover:text-rust transition-colors">
+          Autonomous Construction Site PPE &amp; Hazard Inspection
+        </h3>
+      </div>
+      <div class="mt-8 pt-4 border-t border-borderline flex items-center justify-between">
+        <span class="text-xs uppercase tracking-widest text-muted group-hover:text-rust transition-colors font-semibold">View Details</span>
+        <span class="text-rust transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 05 Card -->
+  <article onclick="openModal('project-5')" class="border border-borderline hover:border-rust bg-paper transition-all group shadow-sm cursor-pointer flex flex-col h-full overflow-hidden relative">
+    <div class="h-48 overflow-hidden border-b border-borderline relative bg-borderline/20">
+      <img src="assets/Q-maintain.jpeg" alt="Project image" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" />
+    </div>
+    <div class="p-6 flex flex-col flex-grow justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-xs font-mono text-rust font-semibold">PROJECT // 05</span>
+        </div>
+        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-ink group-hover:text-rust transition-colors">
+          Q-Maintain: Predictive Maintenance Modeling
+        </h3>
+      </div>
+      <div class="mt-8 pt-4 border-t border-borderline flex items-center justify-between">
+        <span class="text-xs uppercase tracking-widest text-muted group-hover:text-rust transition-colors font-semibold">View Details</span>
+        <span class="text-rust transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </div>
+    </div>
+  </article>
+</div>
+</div>
+</section>
+<!-- END: FeaturedProjectsSection -->
+<!-- BEGIN: HonorsAndAcademicsSection -->
+<section class="py-20 md:py-28" id="honors">
+<div class="max-w-6xl mx-auto px-6 sm:px-8">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-16 pb-4 border-b border-borderline gap-4">
+<div>
+<span class="text-xs uppercase tracking-widest font-mono text-rust font-semibold">Achievements</span>
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mt-1">Achievements and Extracurricular</h2>
+</div>
+</div>
+<div class="divide-y divide-borderline border-y border-borderline">
+<!-- Honor 01 -->
+<div class="py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 group">
+<div>
+<span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">2nd Prize Winner</span>
+<h3 class="font-serif text-xl font-medium text-ink mt-2 group-hover:text-rust transition-colors">SRM College Hackathon</h3>
+<p class="text-sm text-muted mt-1 max-w-xl leading-relaxed">
+                    Awarded 2nd position among 120+ national collegiate teams for designing an autonomous edge-AI diagnostic system under a strict 36-hour sprint.
+                  </p>
+</div>
+<div class="text-xs font-mono text-subtle whitespace-nowrap">NATIONAL EVENT</div>
+</div>
+<!-- Honor 02 -->
+<div class="py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 group">
+<div>
+<span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">Quantum Domain Winner</span>
+<h3 class="font-serif text-xl font-medium text-ink mt-2 group-hover:text-rust transition-colors">Quantathon @ RIT</h3>
+<p class="text-sm text-muted mt-1 max-w-xl leading-relaxed">
+                    Clinched 1st place in the Quantum Domain track for developing algorithmic quantum-assisted predictive modeling scripts.
+                  </p>
+</div>
+<div class="text-xs font-mono text-subtle whitespace-nowrap">ALGORITHMIC / QUANTUM</div>
+</div>
+<!-- Honor 03 -->
+<div class="py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 group">
+<div>
+<span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">Winner</span>
+<h3 class="font-serif text-xl font-medium text-ink mt-2 group-hover:text-rust transition-colors">PALS Workshop Competition</h3>
+<p class="text-sm text-muted mt-1 max-w-xl leading-relaxed">
+                    Recognized as top project winner for engineering innovative technical solutions and high-efficiency systems.
+                  </p>
+</div>
+<div class="text-xs font-mono text-subtle whitespace-nowrap">INNOVATION TRACK</div>
+</div>
+
+<!-- Extracurricular 01 -->
+<div class="py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 group">
+<div>
+<span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">Contributor</span>
+<h3 class="font-serif text-xl font-medium text-ink mt-2 group-hover:text-rust transition-colors">Web3Meets AI BootCamp &amp; Startup Pitch Event</h3>
+<p class="text-sm text-muted mt-1 max-w-xl leading-relaxed">
+                    Part of the team involved in conducting the Web3Meets AI BootCamp and Startup Pitch Event, contributing to event coordination and execution.
+                  </p>
+</div>
+<div class="text-xs font-mono text-subtle whitespace-nowrap">EXTRACURRICULAR</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HonorsAndAcademicsSection -->
+<!-- BEGIN: ContactSection -->
+<section class="py-24 bg-cream" id="contact">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+<span class="text-xs uppercase tracking-widest font-mono text-rust font-semibold">Inquiries &amp; Collaboration</span>
+<h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink mt-3 mb-6 tracking-tight">
+          Let’s build something exceptional together.
+        </h2>
+<p class="text-base sm:text-lg text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+          I am actively seeking software engineering and AI/ML opportunities. Whether you have an open position, an ambitious distributed systems project, or simply wish to discuss algorithms — my inbox is always open.
+        </p>
+<!-- Direct Email CTA Button in Warm Literary Outline Style -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+<a class="btn-minimal px-8 py-3.5 text-sm tracking-wider shadow-sm hover:border-rust hover:bg-rust hover:text-white" href="mailto:thiruchelvam1902@gmail.com">
+            thiruchelvam1902@gmail.com
+          </a>
+<a class="btn-minimal-ghost px-6 py-3.5 text-sm" href="https://www.linkedin.com/in/thiru-chelvam1902" rel="noopener noreferrer" target="_blank">
+            LinkedIn Profile →
+          </a>
+</div>
+<!-- Editorial Contact Details -->
+<div class="inline-flex flex-wrap items-center justify-center gap-8 pt-8 border-t border-borderline text-sm text-muted">
+<span class="">Based in <strong class="text-ink font-medium">Chennai, India</strong></span>
+<span class="text-subtle/50">•</span>
+<span class="">Timezone: <strong class="text-ink font-medium">IST (UTC+5:30)</strong></span>
+<span class="text-subtle/50">•</span>
+<span class="text-rust font-semibold">• Open to Remote &amp; Relocation</span>
+</div>
+</div>
+</section>
+<!-- END: ContactSection -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="py-12 border-t border-borderline bg-cream text-xs text-muted">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div>
+<span class="font-serif font-semibold text-ink text-sm">Thiruchelvam N</span>
+<p class="mt-0.5 text-subtle">© <span class="" id="current-year">2026</span>. All rights reserved. Warm editorial craft &amp; engineering precision.</p>
+</div>
+<!-- Footer Social Links -->
+<div class="flex items-center gap-6 font-mono">
+<a class="hover:text-rust transition-colors" href="https://github.com/Thiru1902" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a class="hover:text-rust transition-colors" href="https://www.linkedin.com/in/thiru-chelvam1902" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="hover:text-rust transition-colors" href="https://leetcode.com" rel="noopener noreferrer" target="_blank">LeetCode</a>
+<a class="hover:text-rust transition-colors" href="#about">↑ Back to Top</a>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- Small Utility Script for Dynamic Year -->
+<script data-purpose="footer-year">
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+
+
+<!-- Modals Container -->
+<div id="modals-container">
+
+  <!-- Project 01 Modal -->
+  <div id="project-1" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-ink/70 backdrop-blur-sm" onclick="closeModal('project-1')"></div>
+    
+    <!-- Dialog -->
+    <div class="relative bg-cream border border-borderline shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto z-10 animate-fade-in flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-cream/95 backdrop-blur z-20 px-8 py-5 border-b border-borderline flex justify-between items-center">
+        <span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">Finance Domain Winner</span>
+        <button onclick="closeModal('project-1')" class="text-muted hover:text-rust text-3xl leading-none transition-colors">&times;</button>
+      </div>
+
+      <div class="p-8 sm:p-10">
+        <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mb-6">
+          Future-Fund-FuFu: Predictive Investment &amp; Market Volatility Engine
+        </h3>
+        
+        <div class="mb-8 border border-borderline overflow-hidden w-full relative pt-[56.25%] bg-borderline/20">
+          <img src="assets/Future-Fund_FuFu.jpeg" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </div>
+
+        <p class="text-charcoal text-base sm:text-lg leading-relaxed mb-8 font-sans">
+          Engineered an algorithmic asset evaluation framework designed to quantify stock market volatility and forecast risk-adjusted portfolio returns. Built using statistical regression time-series forecasting combined with a high-concurrency Spring Boot API to simulate multi-year capital compounding scenarios.
+        </p>
+
+        <div class="mb-10">
+          <h4 class="text-xs font-semibold uppercase tracking-widest text-muted mb-4 font-mono">Tech Stack</h4>
+          <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+            <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Spring Boot</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Python</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Redis</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">FinTech ML</span>
+          </div>
+        </div>
+        
+        <div class="pt-6 border-t border-borderline text-center sm:text-left">
+          <a class="btn-minimal inline-block" href="https://github.com/Thiru1902/Future-Fund-FuFu" target="_blank" rel="noopener noreferrer">
+            GitHub Repo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 02 Modal -->
+  <div id="project-2" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-ink/70 backdrop-blur-sm" onclick="closeModal('project-2')"></div>
+    
+    <!-- Dialog -->
+    <div class="relative bg-cream border border-borderline shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto z-10 animate-fade-in flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-cream/95 backdrop-blur z-20 px-8 py-5 border-b border-borderline flex justify-between items-center">
+        <span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">94.2% Validation Accuracy</span>
+        <button onclick="closeModal('project-2')" class="text-muted hover:text-rust text-3xl leading-none transition-colors">&times;</button>
+      </div>
+
+      <div class="p-8 sm:p-10">
+        <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mb-6">
+          Deep Learning Sugarcane Pathology &amp; Early Disease Detection
+        </h3>
+        
+        <div class="mb-8 border border-borderline overflow-hidden w-full relative pt-[56.25%] bg-borderline/20">
+          <img src="assets/Sugarcane-disease-detection.jpeg" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </div>
+
+        <p class="text-charcoal text-base sm:text-lg leading-relaxed mb-8 font-sans">
+          Developed an end-to-end crop diagnosis deep learning model leveraging PyTorch with a fine-tuned ResNet-50 and EfficientNet backbone. Achieved <strong class="text-ink font-semibold">94.2% multi-class accuracy</strong> across common foliar diseases, allowing rural farmers to execute real-time image diagnosis via lightweight mobile endpoints.
+        </p>
+
+        <div class="mb-10">
+          <h4 class="text-xs font-semibold uppercase tracking-widest text-muted mb-4 font-mono">Tech Stack</h4>
+          <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+            <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">PyTorch</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">ResNet-50</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">OpenCV</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Flask</span>
+          </div>
+        </div>
+        
+        <div class="pt-6 border-t border-borderline text-center sm:text-left">
+          <a class="btn-minimal inline-block" href="https://github.com/Thiru1902/sugarcane-disease-detection" target="_blank" rel="noopener noreferrer">
+            GitHub Repo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 03 Modal -->
+  <div id="project-3" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-ink/70 backdrop-blur-sm" onclick="closeModal('project-3')"></div>
+    
+    <!-- Dialog -->
+    <div class="relative bg-cream border border-borderline shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto z-10 animate-fade-in flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-cream/95 backdrop-blur z-20 px-8 py-5 border-b border-borderline flex justify-between items-center">
+        <span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">&lt;20ms Latency</span>
+        <button onclick="closeModal('project-3')" class="text-muted hover:text-rust text-3xl leading-none transition-colors">&times;</button>
+      </div>
+
+      <div class="p-8 sm:p-10">
+        <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mb-6">
+          PRIS: Predictive Real-time Incident &amp; Fault Telemetry System
+        </h3>
+        
+        <div class="mb-8 border border-borderline overflow-hidden w-full relative pt-[56.25%] bg-borderline/20">
+          <img src="assets/PRIS.jpeg" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </div>
+
+        <p class="text-charcoal text-base sm:text-lg leading-relaxed mb-8 font-sans">
+          Architected a proactive incident resolution backend capable of monitoring service heartbeats, logging anomalies via automated pattern recognition, and dispatching instant remediation triggers before downstream cascading failures occur.
+        </p>
+
+        <div class="mb-10">
+          <h4 class="text-xs font-semibold uppercase tracking-widest text-muted mb-4 font-mono">Tech Stack</h4>
+          <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+            <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Java 17</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Spring Boot</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">PostgreSQL</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Docker</span>
+          </div>
+        </div>
+        
+        <div class="pt-6 border-t border-borderline text-center sm:text-left">
+          <a class="btn-minimal inline-block" href="https://github.com/yogeshrajanv/Placement_Intelligence_System" target="_blank" rel="noopener noreferrer">
+            GitHub Repo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 04 Modal -->
+  <div id="project-4" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-ink/70 backdrop-blur-sm" onclick="closeModal('project-4')"></div>
+    
+    <!-- Dialog -->
+    <div class="relative bg-cream border border-borderline shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto z-10 animate-fade-in flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-cream/95 backdrop-blur z-20 px-8 py-5 border-b border-borderline flex justify-between items-center">
+        <span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">30 FPS Edge</span>
+        <button onclick="closeModal('project-4')" class="text-muted hover:text-rust text-3xl leading-none transition-colors">&times;</button>
+      </div>
+
+      <div class="p-8 sm:p-10">
+        <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mb-6">
+          Autonomous Construction Site PPE &amp; Hazard Inspection
+        </h3>
+        
+        <div class="mb-8 border border-borderline overflow-hidden w-full relative pt-[56.25%] bg-borderline/20">
+          <img src="assets/Construction-Compilance.jpeg" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </div>
+
+        <p class="text-charcoal text-base sm:text-lg leading-relaxed mb-8 font-sans">
+          Deployed an optimized YOLOv8 edge vision model for live video streams to recognize worker hardhats, reflective vests, and boundary incursions. Tuned inference speed to sustain over 30 FPS on embedded edge hardware with zero frame latency drops.
+        </p>
+
+        <div class="mb-10">
+          <h4 class="text-xs font-semibold uppercase tracking-widest text-muted mb-4 font-mono">Tech Stack</h4>
+          <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+            <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Edge AI</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">YOLOv8</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">PyTorch</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">OpenCV</span>
+          </div>
+        </div>
+        
+        <div class="pt-6 border-t border-borderline text-center sm:text-left">
+          <a class="btn-minimal inline-block" href="https://github.com/Thiru1902/construction-safety-compliance" target="_blank" rel="noopener noreferrer">
+            GitHub Repo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 05 Modal -->
+  <div id="project-5" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-ink/70 backdrop-blur-sm" onclick="closeModal('project-5')"></div>
+    
+    <!-- Dialog -->
+    <div class="relative bg-cream border border-borderline shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto z-10 animate-fade-in flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-cream/95 backdrop-blur z-20 px-8 py-5 border-b border-borderline flex justify-between items-center">
+        <span class="text-xs font-mono text-rust font-semibold uppercase tracking-wider bg-rust-light px-2 py-0.5 border border-rust/20 inline-block">Quantum Domain</span>
+        <button onclick="closeModal('project-5')" class="text-muted hover:text-rust text-3xl leading-none transition-colors">&times;</button>
+      </div>
+
+      <div class="p-8 sm:p-10">
+        <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mb-6">
+          Q-Maintain: Predictive Maintenance Modeling
+        </h3>
+        
+        <div class="mb-8 border border-borderline overflow-hidden w-full relative pt-[56.25%] bg-borderline/20">
+          <img src="assets/Q-maintain.jpeg" class="absolute top-0 left-0 w-full h-full object-cover" />
+        </div>
+
+        <p class="text-charcoal text-base sm:text-lg leading-relaxed mb-8 font-sans">
+          Quantum-assisted predictive maintenance and equipment degradation modeling system utilizing quantum machine learning algorithms to forecast critical machinery breakdowns and schedule proactive intervention.
+        </p>
+
+        <div class="mb-10">
+          <h4 class="text-xs font-semibold uppercase tracking-widest text-muted mb-4 font-mono">Tech Stack</h4>
+          <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+            <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Quantum ML</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Python</span>
+        <span class="px-2.5 py-1 bg-paper border border-borderline text-charcoal">Predictive Modeling</span>
+          </div>
+        </div>
+        
+        <div class="pt-6 border-t border-borderline text-center sm:text-left">
+          <a class="btn-minimal inline-block" href="https://github.com/Udhay345/Q-Maintain" target="_blank" rel="noopener noreferrer">
+            GitHub Repo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Logic Scripts -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+    document.getElementById(id).classList.add('flex');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+    document.getElementById(id).classList.remove('flex');
+    document.body.style.overflow = 'auto'; // Restore background scrolling
+  }
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+      const modals = document.querySelectorAll('#modals-container > div');
+      modals.forEach(m => {
+        if (!m.classList.contains('hidden')) {
+          closeModal(m.id);
+        }
+      });
+    }
+  });
+</script>
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+</style>
+
+</body></html>
